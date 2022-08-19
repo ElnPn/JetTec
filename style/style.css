@@ -178,7 +178,7 @@
 .main__content{
     margin-left: 113px;
 }
-/*--------------MAIN----------------------------------------*/
+/*--------------SERVICE----------------------------------------*/
 .service__content_item{
     width: 409px;
     height: 381px;
@@ -315,7 +315,7 @@
 
 }
 .checkbox-item_label{
-    margin-left: 20px;
+    /*margin-left: 20px;*/
 }
 .form{
     width: 660px;
@@ -341,7 +341,140 @@
 .form__input:not(:first-child){
     margin-top: 10px;
 }
+.form__input_checkbox{
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+}
+.checkbox-item_label{
+    /*margin-left: 15px;*/
+}
+.form__input_checkbox+label {
+    display: inline-flex;
+    align-items: center;
+    user-select: none;
+}
+.form__input_checkbox+label::before {
+    margin-right: 20px;
+    content: '';
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    flex-shrink: 0;
+    flex-grow: 0;
+    border: 1px solid #AAD3FF;
+    box-shadow: 3px 4px 5px rgba(0, 0, 0, 0.05);
+    border-radius: 5px;
+    /*margin-right: 0.5em;*/
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 90% 90%;
+}
+.form__input_checkbox:checked+label::before {
+    border-color: #AAD3FF;
+    background-color: #fff;
+    /*background-color: #0b76ef;*/
+    background-image: url("../images/form/check.png");
+    /*background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%23fff' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26 2.974 7.25 8 2.193z'/%3e%3c/svg%3e");*/
+}
 /*-------------CONTACTS---------------------------------------*/
+/*.contacts__content_item_title{*/
+/*    font-family: 'Montserrat';*/
+/*    font-style: normal;*/
+/*    font-weight: 600;*/
+/*    font-size: 32px;*/
+/*    line-height: 39px;*/
+/*    !* identical to box height *!*/
+
+/*    text-align: center;*/
+
+/*    color: #000000;*/
+/*    margin-top: 35px;*/
+/*}*/
+/*.contacts__content_item_link{*/
+/*    font-family: 'Segoe UI';*/
+/*    font-style: normal;*/
+/*    font-weight: 400;*/
+/*    font-size: 20px;*/
+/*    line-height: 27px;*/
+/*    !* identical to box height *!*/
+
+/*    text-align: center;*/
+
+/*    color: #000000;*/
+/*    display: block;*/
+/*}*/
+/*.contacts__content_item_link:nth-of-type(1){*/
+/*    margin-top: 25px;*/
+/*}*/
+/*.contacts__content_item_text{*/
+/*    font-family: 'Segoe UI';*/
+/*    font-style: normal;*/
+/*    font-weight: 350;*/
+/*    font-size: 16px;*/
+/*    line-height: 21px;*/
+/*    display: flex;*/
+/*    align-items: center;*/
+/*    text-align: center;*/
+
+/*    color: #000000;*/
+/*    margin-top: 20px;*/
+/*}*/
+/*.contacts__content_item{*/
+/*    display: flex;*/
+/*    flex-direction: column;*/
+/*    align-items: center;*/
+/*    width: 490px;*/
+/*    height: 300px;*/
+/*    background: #FFFFFF;*/
+/*    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);*/
+/*    border-radius: 5px;*/
+/*}*/
+/*.contacts{*/
+/*    padding-top: 65px;*/
+/*    padding-bottom: 65px;*/
+/*    !*background-image: url("../images/footer/map.jpg");*!*/
+/*    background-repeat: no-repeat;*/
+/*    background-size: cover;*/
+/*}*/
+/*.contacts__content{*/
+/*    display: flex;*/
+/*    justify-content: flex-end;*/
+/*}*/
+.contacts__content_item{
+    width: 490px;
+    height: 300px;
+    background: #fff;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    /*margin-top: -50px;*/
+}
+.contacts{
+    /*display: none;*/
+}
+.contacts__map{
+    position: relative;
+}
+.contacts__content_container{
+    position: absolute;
+    display: flex;
+    justify-content: flex-end;
+    /*justify-content: center;*/
+    margin: 0 auto;
+    /*top: 0;*/
+    /*top: 500px;*/
+    /*bottom: 0;*/
+    z-index: 1;
+    /*justify-content: flex-end;*/
+    /*align-items: flex-start;*/
+    /*align-items: flex-end;*/
+    /*align-items: center;*/
+}
+.contacts__content{
+    align-items: center;
+    display: flex;
+    /*justify-content: flex-end;*/
+}
 .contacts__content_item_title{
     font-family: 'Montserrat';
     font-style: normal;
@@ -353,7 +486,6 @@
     text-align: center;
 
     color: #000000;
-    margin-top: 35px;
 }
 .contacts__content_item_link{
     font-family: 'Segoe UI';
@@ -368,10 +500,16 @@
     color: #000000;
     display: block;
 }
-.contacts__content_item_link:nth-of-type(1){
+.main-link{
     margin-top: 25px;
 }
-.contacts__content_item_text{
+.contacts__content_item{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.contacts__content_item_schedule{
     font-family: 'Segoe UI';
     font-style: normal;
     font-weight: 350;
@@ -383,27 +521,6 @@
 
     color: #000000;
     margin-top: 20px;
-}
-.contacts__content_item{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 490px;
-    height: 300px;
-    background: #FFFFFF;
-    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
-    border-radius: 5px;
-}
-.contacts{
-    padding-top: 65px;
-    padding-bottom: 65px;
-    background-image: url("../images/footer/map.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-.contacts__content{
-    display: flex;
-    justify-content: flex-end;
 }
 /*-------------BURGER MENU----------------------------*/
 .burger{
@@ -424,7 +541,7 @@
     width: 100%;
     height: 4px;
     border-radius: 100px;
-    background-color: darkblue;
+    background-color: #FF0075;
     transform: translateY(-50%);
     transition: opacity 0.3s ease-in-out;
 }
@@ -436,7 +553,7 @@
     width: 100%;
     height: 4px;
     border-radius: 100px;
-    background-color: darkblue;
+    background-color: #FF0075;
     transition: transform 0.3s ease-in-out, top 0.3s ease-in-out, bottom 0.3s ease-in-out;
 }
 .burger::before{
@@ -556,4 +673,23 @@
         position: fixed;
         right: 20px;
     }
+}
+/*----------------------FOOTER------------------------*/
+.footer{
+    padding-top: 22px;
+    padding-bottom: 27px;
+    background-color: #141516;
+}
+.footer__content_text{
+    font-family: 'Segoe UI';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 21px;
+    text-align: center;
+
+    color: #FFFFFF;
+}
+.footer__content_text_areal{
+    text-decoration: underline;
 }
